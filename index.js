@@ -1,47 +1,81 @@
 // TODO: Include packages needed for this application
-const fs = require('fs');
-const inquirer = ('inquirer')
+const inquirer = require('inquirer'); // package included for prompting questions
+const fs = require('fs'); // this will get the filesystem
+const generateMarkdown = require('./utils/generateMarkdown.js');
+
 // TODO: Create an array of questions for user input
-const questions = ([{
-      type: 'input',
-      message: 'Project Title',
-      name: 'Title',
-      
+const questions = [
+    {
+        type: 'input',
+        name: 'title',
+        message: 'Give your project a title',
     },
     {
-      type: 'input',
-      message: 'Write a description about your project.',
-      name: 'Description',
+        type: 'input',
+        name: 'description',
+        message: 'Write a descriptive message about your project',
     },
     {
-      type: 'input',
-      message: 'Installation instructions',
-      name: 'What are required to install this project?'
+        type: 'input',
+        name: 'installation',
+        message: 'What do you need to install?',
     },
-      {
-      type: 'input',
-      message: 'What are the usage for your project?',
-      name: 'Usage',
+    {
+        type: 'input',
+        name: 'usage',
+        message: 'what are the usage of your project?',
     },
-      {
-      type: 'input',
-      message: 'What are the contribution?',
-      name: 'Contributing',
+    {
+        type: 'input',
+        name: 'contribution',
+        message: 'write your contribution guidelines',
     },
-      {
-      type: 'input',
-      message: 'What are the tests on this project?',
-      name: 'Test',
+    {
+        type: 'input',
+        name: 'tests',
+        message: 'write your tests instructions',
     },
-]);
+    {
+        type: 'input',
+        name: 'questions',
+        message: 'Feel free to contact me',
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'your email',
+    },
+    {
+        type: 'input',
+        name: 'github',
+        message: 'your github account',
+    },
+    {
+        type: 'list',
+        name: 'license',
+        message: 'what license does your project use?',
+        choices: ['None', 'MIT', 'Apache 2.0'],
+    },
+];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-
-}
+    fs.writeFile(fileName, data, (err) => {
+        if (err) {
+            return console.log('something went wrong!');
+        }
+        console.log("Success! You created your README!");
+    });
+};
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt(questions)
+    .then(function (userInput) {
+        console.log(userInput)
+        writeToFile("README.md", generateMarkdown(userInput));
+    });
+};
 
 // Function call to initialize app
 init();
