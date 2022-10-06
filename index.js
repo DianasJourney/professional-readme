@@ -23,37 +23,37 @@ const questions = [
     {
         type: 'input',
         name: 'usage',
-        message: 'what are the usage of your project?',
+        message: 'What are the usage of your project?',
     },
     {
         type: 'input',
         name: 'contribution',
-        message: 'write your contribution guidelines',
+        message: 'Write your contribution guidelines',
     },
     {
         type: 'input',
         name: 'tests',
-        message: 'write your tests instructions',
+        message: 'Write your tests instructions',
     },
     {
         type: 'input',
         name: 'questions',
-        message: 'Feel free to contact me',
+        message: 'Got inquiries? Contact me.',
     },
     {
         type: 'input',
         name: 'email',
-        message: 'your email',
+        message: 'Your email',
     },
     {
         type: 'input',
         name: 'github',
-        message: 'your github account',
+        message: 'Your github account',
     },
     {
         type: 'list',
         name: 'license',
-        message: 'what license does your project use?',
+        message: 'What license does your project use?',
         choices: ['None', 'MIT', 'Apache 2.0'],
     },
 ];
@@ -71,10 +71,10 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions)
-    .then(function (userInput) {
-        console.log(userInput)
-        writeToFile("README.md", generateMarkdown(userInput));
-    });
+        .then(function (userInput) {
+            console.log(userInput)
+            writeToFile("README.md", generateMarkdown(userInput));
+        });
 };
 
 // Function call to initialize app
