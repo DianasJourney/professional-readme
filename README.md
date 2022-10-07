@@ -17,18 +17,21 @@ a
 ## Usage
 a
 
-## Contribution Guidelines
-aa
+## Contribution
+a
 
 ## Tests
 a
 
-## Questions? Feel free to contact me
+## Questions?
+### Feel free to contact me
 - Github: a
 - Email: a
 
 ## License
-MIT
-License: MIT [![License](https://img.shields.io/badge/License-MIT-yellow.svg)]
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+
+A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
+
 https://choosealicense.com/licenses/mit/
 

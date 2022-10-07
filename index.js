@@ -37,11 +37,6 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'questions',
-        message: 'Got inquiries? Contact me.',
-    },
-    {
-        type: 'input',
         name: 'email',
         message: 'Your email',
     },

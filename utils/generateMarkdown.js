@@ -3,9 +3,9 @@
 function renderLicenseBadge(license) {
   let badge ='';
   if(license === 'MIT') {
-    badge = '[![License](https://img.shields.io/badge/License-MIT-yellow.svg)]'
+    badge = '![License](https://img.shields.io/badge/License-MIT-yellow.svg)'
   } else if (license === 'Apache 2.0') {
-    badge = '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)]'
+    badge = '![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)'
   } else {
     badge = '';
   }
@@ -19,7 +19,7 @@ function renderLicenseLink(license) {
   if(license === 'MIT') {
     licenseLink = 'https://choosealicense.com/licenses/mit/'
   } else if (license === 'Apache 2.0'){
-    licenseLink = 'test.com'
+    licenseLink = 'https://www.apache.org/licenses/LICENSE-2.0'
   }
   return licenseLink;
 }
@@ -30,8 +30,10 @@ function renderLicenseSection(license) {
   let licenseSection = '';
   if(license === 'None') {
     licenseSection = '';
-  } else {
-    licenseSection = `License: ${license}`
+  } else if(license === 'Apache 2.0') {
+    licenseSection = `License: A permissive license whose main conditions require preservation of copyright and license notices. Contributors provide an express grant of patent rights. Licensed works, modifications, and larger works may be distributed under different terms and without source code.`
+  } else if (license === 'MIT') {
+    licenseSection = `A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.`
   }
   return licenseSection;
 }
@@ -57,19 +59,22 @@ ${data.installation}
 ## Usage
 ${data.usage}
 
-## Contribution Guidelines
+## Contribution
 ${data.contribution}
 
 ## Tests
 ${data.tests}
 
-## Questions? Feel free to contact me
+## Questions?
+### Feel free to contact me
 - Github: ${data.github}
 - Email: ${data.email}
 
 ## License
-${data.license}
-${renderLicenseSection(data.license)} ${renderLicenseBadge(data.license)}
+${renderLicenseBadge(data.license)}
+
+${renderLicenseSection(data.license)}
+
 ${renderLicenseLink(data.license)}
 
 `;
