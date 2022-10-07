@@ -6,9 +6,7 @@ function renderLicenseBadge(license) {
     badge = '![License](https://img.shields.io/badge/License-MIT-yellow.svg)'
   } else if (license === 'Apache 2.0') {
     badge = '![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)'
-  } else {
-    badge = '';
-  }
+  } 
   return badge;
 }
 
@@ -20,7 +18,7 @@ function renderLicenseLink(license) {
     licenseLink = 'https://choosealicense.com/licenses/mit/'
   } else if (license === 'Apache 2.0'){
     licenseLink = 'https://www.apache.org/licenses/LICENSE-2.0'
-  }
+  } 
   return licenseLink;
 }
 
@@ -29,7 +27,7 @@ function renderLicenseLink(license) {
 function renderLicenseSection(license) {
   let licenseSection = '';
   if(license === 'None') {
-    licenseSection = '';
+    licenseSection = 'N/A';
   } else if(license === 'Apache 2.0') {
     licenseSection = `License: A permissive license whose main conditions require preservation of copyright and license notices. Contributors provide an express grant of patent rights. Licensed works, modifications, and larger works may be distributed under different terms and without source code.`
   } else if (license === 'MIT') {
