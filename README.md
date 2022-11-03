@@ -17,7 +17,8 @@ You will need to install the following. 1. Vscode 2. Node Js and 3. Inquirer 8.2
 ## Usage
 The usage of my project is simple, once all the following applications are installed, users can simply use "node ." to run in the command line, after that the questions will prompt up and they will simply answer the questions accordingly. After all the questions are answered a professional README will then be generated.
 
-![email-logo](https://user-images.githubusercontent.com/109758045/194623645-490702aa-d267-437b-8bc7-fbea5ed5ed02.png)
+[Readme Demo.webm](https://user-images.githubusercontent.com/109758045/199806197-c246b772-97f9-465d-8245-ee86d95605f6.webm)
+
 
 ## Contribution
 For this project there are no contributions.
